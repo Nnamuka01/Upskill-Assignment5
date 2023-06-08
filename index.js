@@ -1,49 +1,39 @@
 
-// 1: Create a function that will be able to convert figures from Fahrenheit to celsius
-function  convertFahrenheitToCelsius(Fahrenheit) {
-    var celsius = (Fahrenheit - 32) / 1.8;
-    return celsius;
+// Question 1: Create a function that will be able to convert figures from Fahrenheit to celsius
+let FahrToCel = (fahr) => {
+    return (fahr - 32) * (5/9)
 }
-    var temperatureInFahrenheit = 100;
-    var temperatureInCelsius = convertFahrenheitToCelsius(temperatureInFahrenheit);
-    console.log ("Temperature In Celsius: " + temperatureInCelsius);
+
+// Question 1: Test Cases 
+// console.log(FahrToCel(32) + "°C")  //0
+// console.log(FahrToCel(113) + "°C") //45
 
 //  2. Create a funtion that will calculate the average of numbers in an array.
- function getAverage(numbers) {
-    if (numbers.length === 0) {
-        return 0; //
+let arrAvg = (arr) => {
+    let arrSum = 0;
+    for(let i = 0; i < arr.length; i++) {
+        arrSum = arrSum + arr(i)
     }
-    
-    let sum = 0;
-    for (let i = 0; i < numbers.length; i++) {
-        sum += numbers[i];
-    }
-
-    let average = sum / numbers.length;
-    return average;
+    return (arrSum/arr.length)
 }
-    let numbers = [1,2,3,4,5];
-    let average = getAverage(numbers); 
-    console.log("Average:" + average);
  
+// Question 2: Test Cases
+console.log(arrAvg((2, 4, 6)))   //4
+console.log(arrAvg((8, 16, 24))) //16
 
 // 3. Create a function that checks if a number, n is divisible by two numbers x and y. All inputs are positive, non-zero digits
-  function nisDivisble(n,x,y) {
-     if (n % x ===0 && n % y === 0) {
-        return true;
-     } else {
-        return false;
-     }
-    } 
-    let n = 16;
-    let x = 8;
-    let y = 4;
-
-    if (nisDivisble(n,x,y)) {
-        console.log(n + " is divisible by " + x + " and " + y);
-    } else {
-        console.log(n + "is not divisible by" + x + " and " + y);
+let duoDiviChecker = (n, x, y) => {
+    if(n % x === 0 && n % y === 0) {
+        return true
+    }else{
+        return false
     }
+}
+
+// Question 3: Test Cases
+console.log(duoDiviChecker(45, 3, 15))  //true
+console.log(duoDiviChecker(200,10, 17)) //false 
+    
     
 // 4. Create a function that will output the first 100 prime numbers.
   function outputPrimeNumbers(n) {
