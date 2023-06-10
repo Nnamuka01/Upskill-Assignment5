@@ -35,58 +35,55 @@ console.log(duoDiviChecker(45, 3, 15))  //true
 console.log(duoDiviChecker(200,10, 17)) //false 
     
     
-// 4. Create a function that will output the first 100 prime numbers.
-  function outputPrimeNumbers(n) {
-    var primeNumbers = (100);
-    var num = 2;
-    
-    while (primeNumbers.length < n) {
-      var isPrime = true;
 
-      for (var i = 2; i <= Math.sqrt(num); i+++ 100) {
-        if ( num % i === 0) {
-          isPrime = false;
-          break;
+// Question 4. Create a function that will output the first 100 prime numbers.
+  function PrimeNumber(num){
+    let i = 2, squareRoot = Math.sqrt(num)
+    while(i <= squareRoot) {
+      if(num % 1 === 0){
+              i++
+              return false
         }
-     }
-
-     if (isPrime) {
-       primeNumbers.push(num);
-     }
-
-     num++;
+      i++
     }
-
-    return primeNumbers;
+        return num > 1
   }
-
-var first100Primes = outputPrimeNumbers(100);
-console.log("first100Primes");
-
-// 5. Create a function that will return a boolean specifying if a number is a prime number
-      function returnBoolean(n) {
-        if (12<= 10) {
-          return false;
+  function outputPrimeNumbers (){
+      for(let number = 0; number <= 100; number++) {
+        if('PrimeNumber'(number)) {
+            console.log('${number} is a prime number')
         }
-        for (let i = 2; i <= Math.sqrt (Number); i+++ 20) {
-          if (number % i === 0) {
-            return false;
-          }
-        }
+    }
+//   }   
 
-        return true;
-      }
-      console.log("returnBoolean(12)"); 
-      console.log("returnBoolean(20)"); 
-      console.log("returnBoolean(17)"); 
+// Question 4: Test Case
+//  'outputPrimeNumbers'(number);
+// '2 is a prime number'
+// '3 is a prime number' 
 
-// 6. Create a function that receives an array of numbers of diverse numbers and returns an array containing only positive numbers.
-      function filterPositiveNumbers(numbers) {
-        return numbers.filter((num) => num > 0);
-      }
-      const numbers = [-2, 5, 0, -7, 12, -4, 8];
-      const positiveNumbers = filterPositiveNumbers(numbers);
-      console.log(positiveNumbers);
+
+// Question 5. Create a function that will return a boolean specifying if a number is a prime number
+ function isPrimeNumber (number) {
+    if(PrimeNumber(number)) {
+       return true;
+    }else{
+        return false;
+    }     
+ }
+
+ // Question 5: Test Cases
+//  console.log(isPrimeNumber(5)); // Output: true
+//  console.log(isPrimeNumber(12)); // Output: false
+
+
+// Question 6. Create a function that receives an array of numbers of diverse numbers and returns an array containing only positive numbers.
+   function getPositiveNumbers(numbers) {
+    return numbers.filter(number => number > 0);
+   }  
+
+   // Question 6: Test Cases
+//    console.log(getPositiveNumbers(1, 2, 3, -4, 7, -12)) // Outout: (1, 2, 3, 7)
+//    console.log(getPositiveNumbers(6, 12, -3, -14, 7, -12)) // Output: (6, 12, 7)
 
 // 7. Write a program that prints the numbers from 1 to 100. But for multiples of 3 prints "Fizz" instead of the number and for the multiples of 5 prints "Buzz". For numbers which are multiples of both 3 and 5
 //    prints "FizzBuzz"
